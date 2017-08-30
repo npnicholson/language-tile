@@ -29,7 +29,7 @@
       'match': '\\b(while|for|if|else|return|break|continue)\\b'
       'name': 'keyword.control.tile'
     },
-    {
+    { # This keyword
       'match': '\\b(this)\\b'
       'name': 'variable.language.tile'
     }
@@ -41,14 +41,6 @@
         '2':
           'name': 'comment.line.double-slash.tile'
       'name': 'keyword.control.tile'
-    },
-    { # Function Handles
-      'match': '(@){1}(.*)\\b'
-      'captures':
-        '1':
-          'name': 'entity.name.function.tag.tile'
-        '2':
-          'name': 'entity.name.function.tag.tile'
     },
     { # Functions declarations (and the variables that are passed in)
       'match': '\\b(function)\\b'
@@ -79,11 +71,19 @@
       ]
     },
     { # Operators (+ - / * < > += -= *= /= | & as individuals)
-      'match': '[+\\-=<>\\*\/]*=|[%<>!+\\-\\*\\^/\\|&]'
+      'match': '[+\\-=<>\\*\/]=|[=%<>!+\\-\\*\\^/\\|&]'
       'name': 'keyword.operator.tile'
     },
-    { # Variables
-      'match': '[a-zA-Z_][a-zA-Z_0-9]*'
-      'name': 'variable.parameter.tile'
+    { # Variable Declarations
+      'match': '([a-zA-Z_][a-zA-Z_0-9]*)[\\s]*(\\[(.|\\s)*\\])?[\\s]*([=])(\\s|[^=])'
+      'captures':
+        '1':
+          'name': 'entity.name.function.tag.tile'
+        '4':
+          'name': 'keyword.operator.tile'
+    },
+    { # Function Handles
+      'match': '[@]?[a-zA-Z_][a-zA-Z_0-9]*'
+      'name': 'variable.parameter.tile' #entity.name.function.tag.tile'
     }
 ]
