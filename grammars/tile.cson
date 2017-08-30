@@ -18,7 +18,7 @@
       'name': 'constant.numeric.tile'
     },
     { # True False Types
-      'match': '\\b(true|false|null|number|string|bool)\\b'
+      'match': '\\b(true|false|null|number|string|bool|list|funct|struct)\\b'
       'name': 'constant.language.tile'
     },
     { # Reserved Words
@@ -26,16 +26,20 @@
       'name': 'keyword.operator.tile'
     },
     { # While For If Else
-      'match': '\\b(while|for|if|else|return)\\b'
+      'match': '\\b(while|for|if|else|return|break|continue)\\b'
       'name': 'keyword.control.tile'
     },
+    {
+      'match': '\\b(this)\\b'
+      'name': 'variable.language.tile'
+    }
     { # Import Statements (and the import after the statement until the ;)
       'match': '(\\bimport\\s)([^;\\n]*)'
       'captures':
         '1':
           'name': 'keyword.control.tile'
         '2':
-          'name': 'storage.modifier.tile'
+          'name': 'comment.line.double-slash.tile'
       'name': 'keyword.control.tile'
     },
     { # Function Handles
@@ -46,16 +50,16 @@
         '2':
           'name': 'entity.name.function.tag.tile'
     },
+    { # Functions declarations (and the variables that are passed in)
+      'match': '\\b(function)\\b'
+      'name': 'keyword.control.tile'
+    },
     { # Functions
       'match': '(\\w+)\\s*\\('
       'captures':
         '1':
           #'name': 'entity.name.function.tag'
           'name': 'entity.name.function.tile'
-    },
-    { # Functions declarations (and the variables that are passed in)
-      'match': '\\b(function)\\b'
-      'name': 'keyword.control.tile'
     },
     { # Quotation sections (including escape charactors)
       'begin': '\'|\"'
@@ -77,5 +81,9 @@
     { # Operators (+ - / * < > += -= *= /= | & as individuals)
       'match': '[+\\-=<>\\*\/]*=|[%<>!+\\-\\*\\^/\\|&]'
       'name': 'keyword.operator.tile'
+    },
+    { # Variables
+      'match': '[a-zA-Z_][a-zA-Z_0-9]*'
+      'name': 'variable.parameter.tile'
     }
 ]
