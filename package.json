@@ -1,6 +1,6 @@
 {
   "name": "language-tile",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Tile language support in Atom",
   "engines": {
     "atom": "*"
@@ -8,10 +8,10 @@
   "dependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://bitbucket.org/roundpixeldev/language-tile"
+    "url": "https://github.com/npnicholson/language-tile.git"
   },
   "bugs": {
-    "url": "https://bitbucket.org/roundpixeldev/language-tile/issues"
+    "url": "https://github.com/npnicholson/language-tile/issues"
   },
   "license": "MIT"
 }
