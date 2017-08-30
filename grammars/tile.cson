@@ -35,22 +35,23 @@
         '1':
           'name': 'keyword.control.tile'
         '2':
-          'name': 'comment.line.double-slash.tile'
+          'name': 'storage.modifier.tile'
       'name': 'keyword.control.tile'
     },
     { # Function Handles
       'match': '(@){1}(.*)\\b'
       'captures':
         '1':
-          'name': 'entity.name.function.tag'
+          'name': 'entity.name.function.tag.tile'
         '2':
-          'name': 'entity.name.function.tag'
+          'name': 'entity.name.function.tag.tile'
     },
     { # Functions
       'match': '(\\w+)\\s*\\('
       'captures':
         '1':
-          'name': 'entity.name.function.tag'
+          #'name': 'entity.name.function.tag'
+          'name': 'entity.name.function.tile'
     },
     { # Functions declarations (and the variables that are passed in)
       'match': '\\b(function)\\b'
